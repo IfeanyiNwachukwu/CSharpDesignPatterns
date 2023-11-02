@@ -46,6 +46,22 @@ Console.Title = "Builder";
 
 
 
+// Implementation 3
+    // Create a web host builder
+    var builder = new  WebHostBuilder  ();
+
+// Configure the builder using method chaining
+        var webHost = builder
+            .UseEnvironment("Production")
+            .UseServer("Kestrel")
+            .UseHttps(true)
+            .Build();
+
+        // Run the web host
+         webHost.Run();
+
+
+
 
 
 
