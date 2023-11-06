@@ -1,12 +1,34 @@
-﻿The intent of the factory method pattern is to define an interface for creating an object but to let subclasses decide which class to instantiate.
+﻿Command
+The intent of this pattern is to encapsulate a request as an object,
+thereby letting you parameterize clients with different requests, queue
+or log requests, and support undoable operations.
 
 
-Factory method lets a class defer instantiation to subclasses.
+Invoker asks Command to cary
+out a request.
 
-USE CASES
+Command declares an interface
+for executing an operation.
 
-1. When a class can't anticipate the class of objects it must create.
+ConcreteCommand defines a
+binding between a Receiver and
+and action. It implements Execute
+by invoking the corresponding
+operation(s) on Receiver.
 
-2. When a class wants its subclasses to specify the object it creates.
+Receiver knows how to perform
+the operations associated with
+carrying out a request.
 
-3. As a way to enable reusing of existing objects
+Client creates the
+ConcreteCommand and sets its
+Receiver
+
+
+Use Cases for the Command Pattern
+When you want to parameterize objects with an action to perform
+When you want to support undo
+When you want to specify, queue and execute requests at
+different times
+When you need to store a list of changes to potentially reapply
+later on
