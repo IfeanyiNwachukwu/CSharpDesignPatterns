@@ -1,4 +1,5 @@
 ﻿using Command;
+using CommandImplementation2;
 
 Console.Title = "Command";
 
@@ -27,5 +28,22 @@ repository.WriteDataStore();
 
 commandManager.UndoAll();
 repository.WriteDataStore();
+
+
+
+// Implementation 11
+
+Light light = new Light();
+var lightOnCommand = new LightOnCommand(light);
+var lightOffCommand = new LightOffCommand(light);
+
+
+RemoteControl remote = new RemoteControl();
+
+remote.SetCommand(lightOnCommand);
+remote.PressButton(); // Output: Light turned on
+
+remote.SetCommand(lightOffCommand);
+remote.PressButton(); // Output: Light turned off
 
 Console.ReadKey();

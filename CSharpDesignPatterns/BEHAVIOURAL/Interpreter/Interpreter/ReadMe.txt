@@ -1,12 +1,25 @@
-﻿The intent of the factory method pattern is to define an interface for creating an object but to let subclasses decide which class to instantiate.
+﻿Memento
+The intent of this pattern is to capture and externalize an object's
+internal state so that the object can be restored to this state later,
+without violating encapsulation.
 
 
-Factory method lets a class defer instantiation to subclasses.
+Memento stores the internal state
+of the originator. The state should
+be protected against access by
+other objects as much as possible.
 
-USE CASES
+Originator creates a Memento
+with a snapshot of its internal
+state. It also uses the Memento
+to restore its internal state.
 
-1. When a class can't anticipate the class of objects it must create.
+Caretaker keeps the Memento
+safe, and shouldn’t operate on or
+examine its contents.
 
-2. When a class wants its subclasses to specify the object it creates.
-
-3. As a way to enable reusing of existing objects
+Use Cases for the Memento Pattern
+When part of an object’s state must be saved so it can be restored
+later on
+AND when a direct interface to obtaining the state would expose
+implementation details and break encapsulation
